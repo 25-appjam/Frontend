@@ -1,17 +1,58 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { theme } from '../libs/style/theme';
-
+import React, { useState } from "react";
+import styled from "styled-components";
+import { theme } from "../libs/style/theme";
+import CalendarImage4 from "../assets/calendar4.png";
+import CalendarImage5 from "../assets/calendar5.png";
+import Todo1 from "../assets/todo1.png";
+import Todo2 from "../assets/todo2.png";
+import Todo3 from "../assets/todo3.png";
+import { useNavigate } from "react-router-dom";
+import { Modal } from "../components/common/modal";
+import { Input } from "../components/common/input";
+import { Button } from "../libs/style/components";
 export const Calendar = () => {
-	return (
-		<Container>
-			<TopDiv></TopDiv>
+  const [a, setA] = useState(0);
+  const nav = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [value, setValue] = useState("");
 
-			<BottomDiv></BottomDiv>
-		</Container>
-	);
+  return (
+    <Container>
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+        <p>2024. 04. 21</p>
+        <Input
+          placeholder="할 일을 입력해주세요"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <Button
+          onClick={() => {
+            setA(2);
+            setValue("");
+            setIsOpen(false);
+          }}
+        >
+          일정 추가
+        </Button>
+      </Modal>
+      {a === 0 ? (
+        <CalendarImage src={CalendarImage4} onClick={() => setA(1)} />
+      ) : (
+        <CalendarImage src={CalendarImage5} onClick={() => setIsOpen(true)} />
+      )}
+      {a === 0 ? (
+        <CalendarImage src={Todo1} onClick={() => setA(1)} />
+      ) : a === 1 ? (
+        <CalendarImage src={Todo2} />
+      ) : (
+        <CalendarImage src={Todo3} />
+      )}
+    </Container>
+  );
 };
-
+const CalendarImage = styled.img`
+  width: 350px;
+`;
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -40,6 +81,4 @@ const BottomDiv = styled.div`
   border-style: solid;
   border-radius: 20px;
   box-shadow: 0px 4.129px 4.129px 0px rgba(0, 0, 0, 0.25);
-  
-
 `;
