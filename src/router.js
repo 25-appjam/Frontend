@@ -7,7 +7,7 @@ import { Join } from "./pages/auth/join";
 import { Home } from "./pages/home";
 import { Recommend } from "./pages/recommend/index";
 import Roulette from "./pages/recommend/roulette";
-import { TodoList } from "./pages/TodoList";
+import { List } from "./pages/list";
 
 export const Router = () => {
   return (
@@ -19,6 +19,7 @@ export const Router = () => {
         <Route path="/join" element={<Join />} />
         <Route element={<DefaultLayout />}>
           <Route path="/home" element={<Home />} />
+          <Route path="/home/list" element={<List />} />
           <Route path="/recommend/" element={<Recommend />} />
           <Route path="/recommend/roulette" element={<Roulette />} />
           <Route path="/todolist" element={<TodoList />} />
