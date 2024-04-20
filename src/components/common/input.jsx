@@ -50,7 +50,7 @@ const TextField = styled.input`
   outline: none;
   border: none;
   width: 100%;
-  color: ${theme.primary};
+  color: ${theme.primary3};
 
   &::-webkit-input-placeholder {
     color: ${theme.primary2};

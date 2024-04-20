@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import { TabBar } from "../../components/common/tabBar";
 import { Outlet } from "react-router-dom";
-import { Notice } from "../../components/common/notice";
 
 export const DefaultLayout = () => {
   return (
     <Container>
-      <Notice />
       <ChildrenContainer>
         <Outlet />
       </ChildrenContainer>

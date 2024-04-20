@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AUTH_URL = "http://localhost:8000";
+const AUTH_URL = "http://211.112.175.88:8086";
 
 export const AuthInstance = axios.create({
   baseURL: AUTH_URL,
