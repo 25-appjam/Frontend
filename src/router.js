@@ -6,9 +6,8 @@ export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<DefaultLayout />}>
-          <Route path="/" element={<Main />} />
-        </Route>
+        <Route path="/" element={<Main />} />
+        <Route element={<DefaultLayout />}></Route>
       </Routes>
     </BrowserRouter>
   );
