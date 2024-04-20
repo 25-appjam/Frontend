@@ -3,29 +3,29 @@ import { theme } from "../../libs/style/theme";
 
 export const Input = ({
   value = "",
-  label,
   onChange,
   type = "text",
   error,
   max,
+  width = "100%",
+  placeholder = "입력해주세요",
 }) => {
   return (
-    <Container>
+    <Container width={width}>
       <div>
-        <Label htmlFor={label}>{label}</Label>
+        <TextField
+          value={value}
+          type={type}
+          onChange={onChange}
+          maxLength={max}
+          placeholder={placeholder}
+        />
         {max && (
           <p>
             {value.length}/{max}
           </p>
         )}
       </div>
-      <TextField
-        value={value}
-        id={label}
-        type={type}
-        onChange={onChange}
-        maxLength={max}
-      />
       <Error>{error}</Error>
     </Container>
   );
@@ -35,23 +35,26 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
-  width: 100%;
+  width: ${({ width }) => width};
+  color: ${theme.primary};
   > div {
     display: flex;
-    justify-content: space-between;
-    color: ${theme.gray[3]};
+    align-items: center;
+    border-bottom: 2px solid ${theme.primary};
   }
 `;
 
-const Label = styled.label`
-  color: ${theme.gray[3]};
-`;
 const TextField = styled.input`
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 12px 0px;
   outline: none;
   border: none;
-  background-color: ${theme.gray[8]};
+  width: 100%;
+  color: ${theme.primary3};
+
+  &::-webkit-input-placeholder {
+    color: ${theme.primary2};
+  }
 `;
 
 const Error = styled.span`

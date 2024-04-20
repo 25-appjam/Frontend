@@ -1,7 +1,10 @@
-import React from 'react';
+import React from "react";
+import { Weather } from "../../components/recommend/weather";
 
-const Recommend = () => {
-	return <div></div>;
+export const Recommend = () => {
+  return (
+    <div>
+      <Weather />
+    </div>
+  );
 };
-
-export default Recommend;

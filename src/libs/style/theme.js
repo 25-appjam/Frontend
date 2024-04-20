@@ -1,8 +1,8 @@
 export const theme = {
-  primary: "#E74646",
-  primary2: "#FA9884",
-  primary3: "#FFE5CA",
-  primary4: "#FFF3E2",
+  primary: "#FFEFEF",
+  primary2: "#F9BFBF",
+  primary3: "#FF8282",
+  primary4: "#FF3535",
   warning: "#ED4B17",
   gray: {
     1: "#17181A",
