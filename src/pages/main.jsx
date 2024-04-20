@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Button } from '../libs/style/components';
+import { Modal } from '../components/common/modal';
+import { theme } from '../libs/style/theme';
+import { JoinFamily } from '../assets/JoinFamily';
+import { CreateFamily } from '../assets/CreateFamily';
 
 export const Main = () => {
+	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<Container>
 			<Logo>로고</Logo>
@@ -12,7 +17,26 @@ export const Main = () => {
 				다소니
 			</Title>
 
-			<Button width="280px">시작하기</Button>
+			<Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+				<Modal_Container>
+					<Modal_CreateFamily>
+						<JoinFamily />
+					</Modal_CreateFamily>
+
+					<Modal_JoinFamily>
+						<CreateFamily />
+					</Modal_JoinFamily>
+				</Modal_Container>
+			</Modal>
+
+			<Button
+				width='280px'
+				onClick={() => {
+					setIsOpen(!isOpen);
+				}}
+			>
+				시작하기
+			</Button>
 		</Container>
 	);
 };
@@ -44,11 +68,23 @@ const Title = styled.div`
 	align-items: center;
 	font-family: "KCC";
 	font-size: 46px;
-	color: #e74646;
+	color: ${theme.primary};
 
 	p {
 		font-family: "KCC";
 		font-size: 32px;
-		color: #fa9884;
+		color: ${theme.primary2};
 	}
+`;
+
+const Modal_Container = styled.div`height: 200px;`;
+
+const Modal_CreateFamily = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
+
+const Modal_JoinFamily = styled.div`
+	display: flex;
+	flex-direction: row;
 `;
