@@ -7,7 +7,8 @@ import { Join } from "./pages/auth/join";
 import { Home } from "./pages/home";
 import { Recommend } from "./pages/recommend/index";
 import Roulette from "./pages/recommend/roulette";
-import { List } from "./pages/list";
+import { TodoList } from "./pages/TodoList";
+import { Calendar } from "./pages/calendar";
 
 export const Router = () => {
   return (
@@ -23,6 +24,7 @@ export const Router = () => {
           <Route path="/recommend/" element={<Recommend />} />
           <Route path="/recommend/roulette" element={<Roulette />} />
           <Route path="/todolist" element={<TodoList />} />
+          <Route path="/calendar" element={<Calendar />} />
         </Route>
       </Routes>
     </BrowserRouter>

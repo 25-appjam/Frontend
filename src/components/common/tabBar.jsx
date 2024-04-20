@@ -24,16 +24,26 @@ export const TabBar = () => {
         />
         <p>활동</p>
       </IconContainer>
-      <IconContainer $isClicked={path === ""} onClick={() => nav("/")}>
-        <TodoIcon color={path !== "" ? theme.gray[6] : theme.primary3} />
+      <IconContainer
+        $isClicked={path === "todolist"}
+        onClick={() => nav("/todolist")}
+      >
+        <TodoIcon
+          color={path !== "todolist" ? theme.gray[6] : theme.primary3}
+        />
         <p>할 일</p>
       </IconContainer>
       <IconContainer $isClicked={path === "home"} onClick={() => nav("/home")}>
         <HomeIcon color={path !== "home" ? theme.gray[6] : theme.primary3} />
         <p>홈</p>
       </IconContainer>
-      <IconContainer $isClicked={path === ""} onClick={() => nav("/")}>
-        <CalendarIcon color={path !== "" ? theme.gray[6] : theme.primary3} />
+      <IconContainer
+        $isClicked={path === "calendar"}
+        onClick={() => nav("/calendar")}
+      >
+        <CalendarIcon
+          color={path !== "calendar" ? theme.gray[6] : theme.primary3}
+        />
         <p>달력</p>
       </IconContainer>
       <IconContainer $isClicked={path === ""} onClick={() => nav("/")}>
