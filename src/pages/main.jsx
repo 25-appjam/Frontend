@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Modal } from "../components/common/modal";
 import { CreateFamily } from "../assets/CreateFamily";
 import { JoinFamily } from "../assets/JoinFamily";
+import { LogoImage } from "../assets/logo";
 
 export const Main = () => {
   const nav = useNavigate();
@@ -13,7 +14,7 @@ export const Main = () => {
 
   return (
     <Container>
-      <Logo>로고</Logo>
+      <LogoImage />
 
       <Title>
         <p>사랑하는 사람과</p>

@@ -9,12 +9,12 @@ import { useNavigate } from "react-router-dom";
 export const Join = () => {
   const [code, setCode] = useState("");
   const [pw, setPw] = useState("");
-
+  const nav = useNavigate();
   const onClick = () => {
     // 로그인 요청
+    nav("/home");
   };
 
-  const nav = useNavigate();
   return (
     <AuthLayout>
       <Container>

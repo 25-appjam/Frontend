@@ -46,8 +46,13 @@ export const TabBar = () => {
         />
         <p>달력</p>
       </IconContainer>
-      <IconContainer $isClicked={path === ""} onClick={() => nav("/")}>
-        <SettingIcon color={path !== "" ? theme.gray[6] : theme.primary3} />
+      <IconContainer
+        $isClicked={path === "setting"}
+        onClick={() => nav("/setting")}
+      >
+        <SettingIcon
+          color={path !== "setting" ? theme.gray[6] : theme.primary3}
+        />
         <p>설정</p>
       </IconContainer>
     </Container>

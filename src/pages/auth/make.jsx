@@ -24,6 +24,7 @@ export const Make = () => {
     },
     onError: (err) => {
       console.log(err);
+      nav("/home");
     },
   });
   const onClick = () => {

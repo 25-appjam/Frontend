@@ -76,7 +76,7 @@ const TodoContainer = styled.div`
 
 const Contianer = styled.div`
   display: flex;
-  width: 330px;
+  width: 370px;
   gap: 16px;
   padding: 16px;
   flex-direction: column;

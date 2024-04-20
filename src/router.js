@@ -9,6 +9,8 @@ import { Recommend } from "./pages/recommend/index";
 import Roulette from "./pages/recommend/roulette";
 import { TodoList } from "./pages/TodoList";
 import { Calendar } from "./pages/calendar";
+import { List } from "./pages/list";
+import { Setting } from "./pages/setting";
 
 export const Router = () => {
   return (
@@ -20,6 +22,7 @@ export const Router = () => {
         <Route path="/join" element={<Join />} />
         <Route element={<DefaultLayout />}>
           <Route path="/home" element={<Home />} />
+          <Route path="/setting" element={<Setting />} />
           <Route path="/home/list" element={<List />} />
           <Route path="/recommend/" element={<Recommend />} />
           <Route path="/recommend/roulette" element={<Roulette />} />
