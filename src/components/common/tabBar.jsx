@@ -6,42 +6,38 @@ import { HomeIcon } from "../../assets/Home";
 import { CalendarIcon } from "../../assets/calendar";
 import { SettingIcon } from "../../assets/setting";
 import { theme } from "../../libs/style/theme";
-import { the } from "../../../node_modules/@remix-run/router/dist/router.cjs";
 
 export const TabBar = () => {
   const location = useLocation();
   const nav = useNavigate();
   const { pathname } = location;
+  const path = pathname.split("/")[1];
 
   return (
     <Container>
-      <IconContainer $isClicked={pathname === "/"} onClick={() => nav("/")}>
-        <SearchIcon color={pathname !== "/" ? theme.gray[6] : theme.primary3} />
+      <IconContainer
+        $isClicked={path === "recommend"}
+        onClick={() => nav("/recommend")}
+      >
+        <SearchIcon
+          color={path !== "recommend" ? theme.gray[6] : theme.primary3}
+        />
         <p>활동</p>
       </IconContainer>
-      <IconContainer $isClicked={pathname === "/"} onClick={() => nav("/")}>
-        <TodoIcon color={pathname !== "/" ? theme.gray[6] : theme.primary3} />
+      <IconContainer $isClicked={path === ""} onClick={() => nav("/")}>
+        <TodoIcon color={path !== "" ? theme.gray[6] : theme.primary3} />
         <p>할 일</p>
       </IconContainer>
-      <IconContainer
-        $isClicked={pathname === "/home"}
-        onClick={() => nav("/home")}
-      >
-        <HomeIcon
-          color={pathname !== "/home" ? theme.gray[6] : theme.primary3}
-        />
+      <IconContainer $isClicked={path === "home"} onClick={() => nav("/home")}>
+        <HomeIcon color={path !== "home" ? theme.gray[6] : theme.primary3} />
         <p>홈</p>
       </IconContainer>
-      <IconContainer $isClicked={pathname === "/"} onClick={() => nav("/")}>
-        <CalendarIcon
-          color={pathname !== "/" ? theme.gray[6] : theme.primary3}
-        />
+      <IconContainer $isClicked={path === ""} onClick={() => nav("/")}>
+        <CalendarIcon color={path !== "" ? theme.gray[6] : theme.primary3} />
         <p>달력</p>
       </IconContainer>
-      <IconContainer $isClicked={pathname === "/"} onClick={() => nav("/")}>
-        <SettingIcon
-          color={pathname !== "/" ? theme.gray[6] : theme.primary3}
-        />
+      <IconContainer $isClicked={path === ""} onClick={() => nav("/")}>
+        <SettingIcon color={path !== "" ? theme.gray[6] : theme.primary3} />
         <p>설정</p>
       </IconContainer>
     </Container>
