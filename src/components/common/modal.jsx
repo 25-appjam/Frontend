@@ -42,7 +42,7 @@ const Container = styled.div`
   background-color: white;
   top: 50%;
   left: 50%;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 
   width: 80vw;
   max-height: 50vh;
@@ -52,9 +52,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 0px solid ${theme.primary2};
-  border-right-width: 7px;
-  border-bottom-width: 7px;
+  border: 2px solid ${theme.primary2};
 `;
 const CloseButton = styled.div`
   display: flex;
