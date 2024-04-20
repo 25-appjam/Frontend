@@ -5,6 +5,7 @@
 	font-family: 'Pretendard-Medium';
 }
 
+/* 프리텐다드 */
 @font-face {
 	font-family: 'Pretendard-Thin';
 	src: url('https: //cdn .jsdelivr .net/gh/Project Noonnu/noonfonts_ 2107px @1 0.1em /Pretendard Thin;.woff')
@@ -74,5 +75,13 @@
 	src: url('https: //cdn .jsdelivr .net/gh/Project Noonnu/noonfonts_ 2107px @1 0.1em /Pretendard Black;.woff')
 		format('woff');
 	font-weight: 900;
+	font-style: normal;
+}
+
+/* 무럭무럭 */
+@font-face {
+	font-family: 'KCC';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCMurukmuruk.woff2') format('woff2');
+	font-weight: normal;
 	font-style: normal;
 }
