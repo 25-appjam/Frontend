@@ -38,7 +38,6 @@ const WeatherContainer = styled.div`
   flex-direction: column;
   color: white;
   gap: 5px;
-
   > p {
     &:first-child {
       font-size: 20px;
@@ -54,10 +53,11 @@ const WeatherContainer = styled.div`
 `;
 
 const Container = styled.div`
-  width: 330px;
+  width: 100%;
   border-radius: 10px;
   background: linear-gradient(180deg, #ec7263 0%, #864138 100%);
   padding: 20px 27px;
   display: flex;
   justify-content: space-between;
+  height: fit-content;
 `;
