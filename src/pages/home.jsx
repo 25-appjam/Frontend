@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { QuestionIcon } from "../assets/question";
 import { theme } from "../libs/style/theme";
@@ -8,18 +8,24 @@ import { useNavigate } from "react-router-dom";
 import { Modal } from "../components/common/modal";
 import { Input } from "../components/common/input";
 import { Button } from "../libs/style/components";
+
 export const Home = () => {
   const [questionOpen, setQuestionOpen] = useState(false);
 
-  const [data, setData] = useState([
-    {
-      writer: "안예성",
-      content: "엄마 : 양, 아빠 : 코끼리, 형 : 사자",
-    },
-  ]);
+  const [data, setData] = useState(
+    () => JSON.parse(localStorage.getItem("data")) || []
+  );
   const nav = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [answer, setAnswer] = useState("");
+  // useEffect(() => {
+  //   if (localStorage.getItem("data"))
+  //     setData(JSON.parse(localStorage.getItem("data")));
+  // }, [isOpen]);
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
 
   return (
     <Flex>
@@ -29,7 +35,22 @@ export const Home = () => {
             오늘의 질문에 대하여 답변해주세요!
           </p>
           <Input value={answer} onChange={(e) => setAnswer(e.target.value)} />
-          <Button>답변 전송하기</Button>
+          <Button
+            onClick={() => {
+              setData([
+                ...data,
+                {
+                  writer: "안예성",
+                  content: answer,
+                },
+              ]);
+
+              setIsOpen(false);
+              setAnswer("");
+            }}
+          >
+            답변 전송하기
+          </Button>
         </div>
       </Modal>
       <Container>
@@ -62,6 +83,7 @@ export const Home = () => {
         <QuestionContainer onClick={() => setIsOpen(true)}>
           <QuestionWrite />내 대답 하러가기
         </QuestionContainer>
+        <Button onClick={() => nav("/home/list")}>전체 질문 보러가기</Button>
       </Container>
     </Flex>
   );
