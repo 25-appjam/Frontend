@@ -51,6 +51,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border: 0px solid ${theme.primary2};
+  border-right-width: 7px;
+  border-bottom-width: 7px;
 `;
 const CloseButton = styled.div`
   display: flex;
@@ -58,8 +61,6 @@ const CloseButton = styled.div`
   > button {
     background-color: ${theme.primary2};
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
